@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header img {
+    height: 50px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.headlines {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row p {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-style: italic;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 900;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+/* Info Section - Marquee */
+.collaborators {
+    background: #0a0a0a;
+    padding: 3rem 0;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.collab-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.marquee {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 15s linear infinite;
+    width: max-content;
+}
+
+.marquee-track span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.marquee-track img {
+    height: 28px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.5;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .headlines {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    h2 {
+        text-align: left;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .marquee-track {
+        gap: 2.5rem;
+    }
+
+    .marquee-track img {
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem;
+    }
+
+    header img {
+        height: 35px;
+    }
+
+    .marquee-track {
+        gap: 1.5rem;
+    }
+
+    .marquee-track img {
+        height: 18px;
+    }
+
+    .collab-title {
+        font-size: 0.65rem;
+    }
+}
+
+/* Navbar */
+
+.header {
+    position: relative;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    transition: background 0.3s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-links a:hover {
+    opacity: 0.7;
+}
+
+/* info */
+
+.info {
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 100rem;
+}
