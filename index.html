@@ -8,21 +8,27 @@
 </head>
 <body>
     <section class="hero">
-        <header>
+        <!-- Film strip marquees -->
+        <div class="film-strip film-top"></div>
+        <div class="film-strip film-bottom"></div>
+        <div class="film-strip film-left"></div>
+        <div class="film-strip film-right"></div>
+
+        <header class="fade-in fade-in-1">
             <img src="assets/logo-title.png" alt="HildrStudios">
         </header>
 
         <div class="content">
             <div class="headlines">
-                <h1>PRECISION<br>IN EVERY CUT</h1>
-                <h2>VICTORY<br>IN EVERY FRAME</h2>
+                <h1 class="fade-in fade-in-2">PRECISION<br>IN EVERY CUT</h1>
+                <h2 class="fade-in fade-in-2">VICTORY<br>IN EVERY FRAME</h2>
             </div>
 
-            <div class="bottom">
+            <div class="bottom fade-in fade-in-3">
                 <hr>
                 <div class="row">
                     <p>Editing That Elevates Your Brand.<br>Editing That Elevates Creators.</p>
-                    <button>GET STARTED</button>
+                    <button class="fade-in fade-in-4">GET STARTED</button>
                 </div>
                 <hr>
             </div>
@@ -59,11 +65,95 @@
 
     <section class="info">
         <div class="info-container">
-            <div><h2>Welcome to HildrStudios</h2></div>
-            <div>
+            <div class="info-title">
+                <span class="welcome">Welcome to</span>
+                <h2>HildrStudios</h2>
+            </div>
+            <div class="info-description">
                 <p>
                     <strong>HildrStudios</strong> is a creative editing studio that works with creators and brands to craft high-impact, visually compelling content. We specialize in video editing and post-production that elevates storytelling and strengthens digital presence. By combining clean aesthetics with strategic intent, we help our partners stand out and connect with their audience across platforms.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h3 class="services-title">Our Services</h3>
+        <div class="services-carousel">
+            <div class="services-track">
+                <div class="service-card" style="--card-color: #ff6b6b;">
+                    <div class="card-content">
+                        <h4>Video Editing</h4>
+                        <p>Professional post-production</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #4ecdc4;">
+                    <div class="card-content">
+                        <h4>Photo Editing</h4>
+                        <p>Stunning visual enhancement</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #a855f7;">
+                    <div class="card-content">
+                        <h4>Game Development</h4>
+                        <p>Immersive gaming experiences</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #3b82f6;">
+                    <div class="card-content">
+                        <h4>Web Development</h4>
+                        <p>Modern web solutions</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #f59e0b;">
+                    <div class="card-content">
+                        <h4>Electronics</h4>
+                        <p>Hardware innovation</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #10b981;">
+                    <div class="card-content">
+                        <h4>Marketing</h4>
+                        <p>Strategic brand growth</p>
+                    </div>
+                </div>
+                <!-- Duplicated for seamless loop -->
+                <div class="service-card" style="--card-color: #ff6b6b;">
+                    <div class="card-content">
+                        <h4>Video Editing</h4>
+                        <p>Professional post-production</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #4ecdc4;">
+                    <div class="card-content">
+                        <h4>Photo Editing</h4>
+                        <p>Stunning visual enhancement</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #a855f7;">
+                    <div class="card-content">
+                        <h4>Game Development</h4>
+                        <p>Immersive gaming experiences</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #3b82f6;">
+                    <div class="card-content">
+                        <h4>Web Development</h4>
+                        <p>Modern web solutions</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #f59e0b;">
+                    <div class="card-content">
+                        <h4>Electronics</h4>
+                        <p>Hardware innovation</p>
+                    </div>
+                </div>
+                <div class="service-card" style="--card-color: #10b981;">
+                    <div class="card-content">
+                        <h4>Marketing</h4>
+                        <p>Strategic brand growth</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -114,5 +204,86 @@
     </footer>
 
     <script src="js/sticky-nav.js"></script>
+    <script>
+        (function() {
+            const carousel = document.querySelector('.services-carousel');
+            const track = document.querySelector('.services-track');
+            if (!carousel || !track) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let isPaused = false;
+
+            // Auto scroll - moves 1 card width every 2 seconds
+            const cardWidth = 280 + 24; // card width + gap
+            
+            function autoScroll() {
+                if (!isPaused) {
+                    carousel.scrollLeft += 1;
+                    
+                    // Seamless loop
+                    const halfWidth = track.scrollWidth / 2;
+                    if (carousel.scrollLeft >= halfWidth) {
+                        carousel.scrollLeft = 0;
+                    }
+                }
+                requestAnimationFrame(autoScroll);
+            }
+            
+            autoScroll();
+
+            // Mouse drag - only pause while actively dragging
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                isPaused = true;
+                carousel.style.cursor = 'grabbing';
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDown) {
+                    isDown = false;
+                    carousel.style.cursor = 'grab';
+                    // Resume after 2 seconds
+                    setTimeout(() => { isPaused = false; }, 2000);
+                }
+            });
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch handlers
+            carousel.addEventListener('touchstart', (e) => {
+                isPaused = true;
+                startX = e.touches[0].pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener('touchend', () => {
+                setTimeout(() => { isPaused = false; }, 2000);
+            });
+
+            carousel.addEventListener('touchmove', (e) => {
+                const x = e.touches[0].pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+
+            // Card click - pause temporarily
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    isPaused = true;
+                    setTimeout(() => { isPaused = false; }, 3000);
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
