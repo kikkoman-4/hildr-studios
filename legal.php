@@ -172,6 +172,6 @@ include 'includes/header.php';
     });
 })();
 </script>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

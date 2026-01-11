@@ -34,6 +34,6 @@ include 'includes/under-construction.php';
 ?>
 
 <?php include 'includes/footer.php'; ?>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

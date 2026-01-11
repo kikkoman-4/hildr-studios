@@ -13,7 +13,7 @@ include 'includes/pricing-card.php';
 <?php renderPricingHero('Web Development', 'Modern Web Solutions', 
     'Custom websites and web applications built with cutting-edge technology and stunning design.', '#3b82f6'); ?>
 
-<?php include 'includes/under-construction.php'; ?>
+
 
 <div class="pricing-grid" style="display: none;">
 <?php
@@ -68,6 +68,6 @@ renderPricingCard([
 </div>
 
 <?php include 'includes/footer.php'; ?>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

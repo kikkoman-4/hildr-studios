@@ -13,7 +13,7 @@ include 'includes/pricing-card.php';
 <?php renderPricingHero('Marketing', 'Strategic Brand Growth', 
     'Data-driven marketing strategies to amplify your brand and reach your target audience.', '#10b981'); ?>
 
-<?php include 'includes/under-construction.php'; ?>
+
 
 <div class="pricing-grid" style="display: none;">
 <?php
@@ -68,6 +68,6 @@ renderPricingCard([
 </div>
 
 <?php include 'includes/footer.php'; ?>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

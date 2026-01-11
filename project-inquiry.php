@@ -178,6 +178,6 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
     submitBtn.textContent = 'Submit Inquiry';
 });
 </script>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

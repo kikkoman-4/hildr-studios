@@ -1,8 +1,8 @@
 <?php
 $pageTitle = 'HildrStudios';
 $pageStyles = ['splide'];
+// Only preload critical above-the-fold assets
 $preloadAssets = [
-    ['href' => 'Assets/HildrAppleStyleAd-1080p-wMusic.webm', 'type' => 'video'],
     ['href' => 'Assets/hero-bg.png'],
     ['href' => 'Assets/logo-title.png']
 ];
@@ -34,17 +34,17 @@ include 'includes/header.php';
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <div class="hero-slide hero-slide--video">
-                            <video class="hero-media-bg" autoplay muted loop playsinline>
+                            <video class="hero-media-bg" autoplay muted loop playsinline preload="metadata">
                                 <source src="Assets/HildrAppleStyleAd-1080p-wMusic.webm" type="video/webm">
                             </video>
-                            <video class="hero-media hero-media-main" autoplay muted loop playsinline>
+                            <video class="hero-media hero-media-main" autoplay muted loop playsinline preload="metadata" poster="Assets/hero-bg.png">
                                 <source src="Assets/HildrAppleStyleAd-1080p-wMusic.webm" type="video/webm">
                             </video>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <div class="hero-slide hero-slide--image">
-                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 1">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 1" fetchpriority="high">
                             <div class="hero-overlay"></div>
                             <?php include 'includes/film-tape.php'; ?>
                             <div class="hero-slide-content">
@@ -55,11 +55,11 @@ include 'includes/header.php';
                     </li>
                     <li class="splide__slide">
                         <div class="hero-slide hero-slide--image hero-slide--polaroids">
-                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 2">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 2" loading="lazy">
                             <div class="hero-overlay"></div>
                             <div class="polaroid-container">
                                 <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <div class="polaroid polaroid-<?= $i ?>" data-tilt>
+                                <div class="polaroid polaroid-<?= $i ?>">
                                     <div class="polaroid-inner">
                                         <div class="polaroid-image"></div>
                                         <div class="polaroid-caption"></div>
@@ -75,7 +75,7 @@ include 'includes/header.php';
                     </li>
                     <li class="splide__slide">
                         <div class="hero-slide hero-slide--image">
-                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 3">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 3" loading="lazy">
                             <div class="hero-overlay"></div>
                             <div class="hero-slide-content">
                                 <h1>ELEVATE<br>YOUR BRAND</h1>
@@ -92,7 +92,7 @@ include 'includes/header.php';
         </header>
     </section>
 
-    <a href="#collaborators" class="hero-get-started" id="heroGetStarted">
+    <a href="#collaborators" class="hero-get-started" id="heroGetStarted" onclick="event.preventDefault(); document.getElementById('collaborators').scrollIntoView({behavior: 'smooth'}); history.replaceState(null, null, '/');">
         <span>Get Started</span>
     </a>
 
@@ -110,7 +110,7 @@ include 'includes/header.php';
                         ['brand' => 'aws', 'src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', 'alt' => 'Amazon']
                     ];
                     foreach ($collabs as $c): ?>
-                    <li class="splide__slide" data-brand="<?= $c['brand'] ?>"><img src="<?= $c['src'] ?>" alt="<?= $c['alt'] ?>"></li>
+                    <li class="splide__slide" data-brand="<?= $c['brand'] ?>"><img src="<?= $c['src'] ?>" alt="<?= $c['alt'] ?>" loading="lazy" decoding="async" width="100" height="28"></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -128,10 +128,10 @@ include 'includes/header.php';
                 <span class="hamburger-line"></span>
             </button>
             <ul class="navbar-links" id="navbarLinks">
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#services" class="smooth-scroll">Services</a></li>
                 <li><a href="#portfolio" class="smooth-scroll">Projects</a></li>
-                <li><a href="pricing.php">Pricing</a></li>
+                <li><a href="/pricing">Pricing</a></li>
             </ul>
         </div>
         <div class="navbar-overlay" id="navbarOverlay"></div>
@@ -156,10 +156,10 @@ include 'includes/header.php';
                 <ul class="splide__list">
                     <?php
                     $services = [
-                        ['href' => 'pricing-video-editing.php', 'color' => '#ff6b6b', 'title' => 'Video Editing', 'desc' => 'Professional post-production'],
-                        ['href' => 'pricing-photo-editing.php', 'color' => '#4ecdc4', 'title' => 'Photo Editing', 'desc' => 'Stunning visual enhancement'],
-                        ['href' => 'pricing-web-development.php', 'color' => '#3b82f6', 'title' => 'Web Development', 'desc' => 'Modern web solutions'],
-                        ['href' => 'pricing-marketing.php', 'color' => '#10b981', 'title' => 'Marketing', 'desc' => 'Strategic brand growth']
+                        ['href' => '/pricing-video-editing', 'color' => '#ff6b6b', 'title' => 'Video Editing', 'desc' => 'Professional post-production'],
+                        ['href' => '/pricing-photo-editing', 'color' => '#4ecdc4', 'title' => 'Photo Editing', 'desc' => 'Stunning visual enhancement'],
+                        ['href' => '/pricing-web-development', 'color' => '#3b82f6', 'title' => 'Web Development', 'desc' => 'Modern web solutions'],
+                        ['href' => '/pricing-marketing', 'color' => '#10b981', 'title' => 'Marketing', 'desc' => 'Strategic brand growth']
                     ];
                     foreach ($services as $s): ?>
                     <li class="splide__slide">
@@ -197,8 +197,8 @@ include 'includes/header.php';
     <?php include 'includes/footer.php'; ?>
 
     <script src="js/sticky-nav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
     <?php include 'includes/index-scripts.php'; ?>
 </body>
 </html>

@@ -13,7 +13,7 @@ include 'includes/pricing-card.php';
 <?php renderPricingHero('Video Editing', 'Professional Post-Production', 
     'Transform your raw footage into cinematic masterpieces with our expert video editing services.', '#ff6b6b'); ?>
 
-<?php include 'includes/under-construction.php'; ?>
+
 
 <div class="pricing-grid" style="display: none;">
 <?php
@@ -68,6 +68,6 @@ renderPricingCard([
 </div>
 
 <?php include 'includes/footer.php'; ?>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>

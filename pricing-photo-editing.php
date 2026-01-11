@@ -13,7 +13,7 @@ include 'includes/pricing-card.php';
 <?php renderPricingHero('Photo Editing', 'Stunning Visual Enhancement', 
     'Elevate your images with professional retouching, color grading, and creative editing.', '#4ecdc4'); ?>
 
-<?php include 'includes/under-construction.php'; ?>
+
 
 <div class="pricing-grid" style="display: none;">
 <?php
@@ -68,6 +68,6 @@ renderPricingCard([
 </div>
 
 <?php include 'includes/footer.php'; ?>
-<?php include 'includes/nav-scripts.php'; ?>
+<script src="js/sticky-nav.js"></script>
 </body>
 </html>
