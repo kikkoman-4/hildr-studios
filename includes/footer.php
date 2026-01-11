@@ -16,26 +16,27 @@ $footerType = $footerType ?? 'full';
             <p>Precision in Every Cut.<br>Victory in Every Frame.</p>
         </div>
         <div class="footer-links">
-            <?php if ($footerType === 'full'): ?>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="index.php#services" class="smooth-scroll">Services</a></li>
-                    <li><a href="index.php#portfolio" class="smooth-scroll">Projects</a></li>
-                    <li><a href="pricing.php">Pricing</a></li>
-                </ul>
+            <!-- Instagram Feed Section -->
+            <div class="footer-column footer-instagram">
+                <h4>Follow Us <a href="https://www.instagram.com/hildrstudios/" target="_blank" rel="noopener">@hildrstudios</a></h4>
+                <div class="instagram-feed">
+                    <!-- 
+                    OPTION 1: Third-party widget (recommended)
+                    Sign up at elfsight.com, snapwidget.com, or curator.io
+                    Connect your Instagram account and paste the embed code here.
+                    Example: <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                            <div class="elfsight-app-YOUR-APP-ID"></div>
+                    
+                    OPTION 2: Instagram Basic Display API
+                    Requires Meta developer app setup and token management.
+                    See: https://developers.facebook.com/docs/instagram-basic-display-api
+                    -->
+                    <div class="instagram-placeholder">
+                        <p>📸 Check out our latest work on Instagram!</p>
+                        <a href="https://www.instagram.com/hildrstudios/" target="_blank" rel="noopener" class="instagram-cta">View Feed</a>
+                    </div>
+                </div>
             </div>
-            <?php else: ?>
-            <div class="footer-column">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="pricing-video-editing.php">Video Editing</a></li>
-                    <li><a href="pricing-photo-editing.php">Photo Editing</a></li>
-                    <li><a href="pricing-web-development.php">Web Development</a></li>
-                    <li><a href="pricing-marketing.php">Marketing</a></li>
-                </ul>
-            </div>
-            <?php endif; ?>
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
@@ -47,10 +48,11 @@ $footerType = $footerType ?? 'full';
             <div class="footer-column">
                 <h4>Connect</h4>
                 <ul>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/hildrstudios/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/HildrStudios">Facebook</a></li>
                     <li><a href="#">YouTube</a></li>
                     <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <!-- <li><a href="#">Twitter</a></li> -->
                 </ul>
             </div>
         </div>

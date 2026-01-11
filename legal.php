@@ -136,8 +136,6 @@ include 'includes/header.php';
     </div>
 </div>
 
-<a href="index.php" class="back-link">← Back to Home</a>
-
 <?php include 'includes/footer.php'; ?>
 
 <script>

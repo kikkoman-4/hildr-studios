@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Project Inquiry - HildrStudios';
 $pageStyles = ['pricing-pages'];
-$showBackLink = true;
+$navSticky = true;
 $footerType = 'services';
 
 include 'includes/header.php';

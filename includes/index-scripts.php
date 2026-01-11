@@ -162,12 +162,12 @@ function initPortfolioModal() {
     var portfolioItems = document.querySelectorAll('.portfolio-item');
     
     var projects = [
-        { title: 'Nike Campaign 2025', desc: 'A dynamic brand campaign showcasing athletic excellence through cinematic storytelling.', creator: 'Alex Chen', role: 'Lead Editor', date: 'December 2025' },
-        { title: 'Apple Product Launch', desc: 'Sleek product reveal video with minimalist aesthetics and precise timing.', creator: 'Sarah Kim', role: 'Motion Designer', date: 'November 2025' },
-        { title: 'Spotify Wrapped', desc: 'Vibrant year-end recap with bold colors and energetic transitions.', creator: 'Marcus Johnson', role: 'Colorist', date: 'October 2025' },
-        { title: 'Google I/O Visuals', desc: 'Tech conference visuals featuring clean animations and modern design.', creator: 'Emma Davis', role: 'Sound Designer', date: 'September 2025' },
-        { title: 'Tesla Cybertruck', desc: 'Futuristic automotive showcase with dramatic lighting and effects.', creator: 'James Wilson', role: 'VFX Artist', date: 'August 2025' },
-        { title: 'Netflix Documentary', desc: 'Compelling documentary editing with emotional pacing and storytelling.', creator: 'Lisa Park', role: 'Senior Editor', date: 'July 2025' }
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' },
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' },
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' },
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' },
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' },
+        { title: 'Project Title', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', creator: 'Creator Name', role: 'Role Title', date: 'Month Year' }
     ];
 
     portfolioItems.forEach(function(item) {

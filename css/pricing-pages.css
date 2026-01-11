@@ -1,6 +1,7 @@
 /* Shared Pricing Pages Styles */
 .pricing-hero {
-    padding: 6rem 2rem 4rem;
+    padding: 3rem 2rem 4rem;
+    padding-top: calc(56px + 3rem);
     text-align: center;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
     position: relative;
@@ -154,24 +155,10 @@
     transform: scale(1.02);
 }
 
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: white;
-}
-
 /* Project Inquiry Form Styles */
 .inquiry-hero {
-    padding: 6rem 2rem 3rem;
+    padding: 3rem 2rem;
+    padding-top: calc(56px + 3rem);
     text-align: center;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
 }
@@ -328,6 +315,14 @@
 }
 
 @media (max-width: 768px) {
+    .pricing-hero {
+        padding-top: calc(52px + 2rem);
+    }
+    
+    .inquiry-hero {
+        padding-top: calc(52px + 2rem);
+    }
+    
     .pricing-grid {
         grid-template-columns: 1fr;
         padding: 2rem 1rem;

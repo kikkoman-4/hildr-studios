@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Pricing - HildrStudios';
 $pageStyles = ['pricing-pages'];
-$showBackLink = true;
+$navSticky = true;
 $footerType = 'services';
 
 $inlineStyles = '
@@ -28,27 +28,10 @@ include 'includes/header.php';
     <p>Choose the service that fits your needs. Transparent pricing, exceptional quality.</p>
 </section>
 
-<div class="services-overview">
-    <div class="services-grid">
-        <?php
-        $services = [
-            ['href' => 'pricing-video-editing.php', 'color' => '#ff6b6b', 'icon' => '🎬', 'title' => 'Video Editing', 'desc' => 'Professional post-production services including color grading, sound design, and motion graphics.', 'price' => '$499', 'unit' => '/project'],
-            ['href' => 'pricing-photo-editing.php', 'color' => '#4ecdc4', 'icon' => '📸', 'title' => 'Photo Editing', 'desc' => 'Stunning visual enhancement with professional retouching, color correction, and creative editing.', 'price' => '$15', 'unit' => '/image'],
-            ['href' => 'pricing-web-development.php', 'color' => '#3b82f6', 'icon' => '💻', 'title' => 'Web Development', 'desc' => 'Custom websites and web applications built with cutting-edge technology and stunning design.', 'price' => '$999', 'unit' => '/project'],
-            ['href' => 'pricing-marketing.php', 'color' => '#10b981', 'icon' => '📈', 'title' => 'Marketing', 'desc' => 'Data-driven marketing strategies to amplify your brand and reach your target audience.', 'price' => '$799', 'unit' => '/month']
-        ];
-        
-        foreach ($services as $s): ?>
-        <a href="<?= $s['href'] ?>" class="service-overview-card" style="--card-color: <?= $s['color'] ?>;">
-            <div class="service-icon"><?= $s['icon'] ?></div>
-            <h3><?= $s['title'] ?></h3>
-            <p><?= $s['desc'] ?></p>
-            <div class="starting-price">Starting at <strong><?= $s['price'] ?></strong><?= $s['unit'] ?></div>
-            <span class="view-pricing">View Plans →</span>
-        </a>
-        <?php endforeach; ?>
-    </div>
-</div>
+<?php 
+$constructionMsg = 'Our pricing page is being updated with new packages and offers. Check back soon!';
+include 'includes/under-construction.php'; 
+?>
 
 <?php include 'includes/footer.php'; ?>
 <?php include 'includes/nav-scripts.php'; ?>

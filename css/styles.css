@@ -637,6 +637,10 @@ button:hover { opacity: 0.7; }
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
+.header.sticky {
+    transform: translateY(0);
+}
+
 .header.visible {
     transform: translateY(0);
 }
@@ -725,8 +729,9 @@ button:hover { opacity: 0.7; }
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 1002;
     gap: 5px;
+    position: relative;
 }
 
 .hamburger-line {
@@ -773,6 +778,7 @@ button:hover { opacity: 0.7; }
         transform: translateY(-100%);
     }
 
+    .header.sticky,
     .header.visible {
         transform: translateY(0);
     }
@@ -791,6 +797,7 @@ button:hover { opacity: 0.7; }
 
     .navbar-overlay {
         display: block;
+        z-index: 1000;
     }
 
     .navbar-links {
@@ -809,7 +816,7 @@ button:hover { opacity: 0.7; }
         -webkit-backdrop-filter: blur(20px);
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
         transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
+        z-index: 1001;
         overflow-y: auto;
     }
 
@@ -1035,6 +1042,75 @@ footer {
 }
 
 .footer-column a:hover { opacity: 0.7; }
+
+/* Instagram Feed in Footer */
+.footer-instagram {
+    min-width: 200px;
+}
+
+.footer-instagram h4 a {
+    color: #E1306C;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-instagram h4 a:hover {
+    opacity: 0.8;
+}
+
+.instagram-feed {
+    margin-top: 0.5rem;
+}
+
+.instagram-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.instagram-placeholder p {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+}
+
+.instagram-cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+    opacity: 1;
+}
+
+/* Instagram grid for when widget is added */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.instagram-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-grid img:hover {
+    opacity: 0.8;
+}
 
 .footer-bottom {
     max-width: 1200px;

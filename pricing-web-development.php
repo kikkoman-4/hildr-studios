@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Web Development Pricing - HildrStudios';
 $pageStyles = ['pricing-pages'];
-$showBackLink = true;
+$navSticky = true;
 $footerType = 'services';
 
 include 'includes/header.php';
