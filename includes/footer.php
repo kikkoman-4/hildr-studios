@@ -40,9 +40,9 @@ $footerType = $footerType ?? 'full';
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="legal.php#terms">Terms & Conditions</a></li>
-                    <li><a href="legal.php#privacy">Privacy Policy</a></li>
-                    <li><a href="legal.php#cookies">Cookie Policy</a></li>
+                    <li><a href="/legal#terms">Terms & Conditions</a></li>
+                    <li><a href="/legal#privacy">Privacy Policy</a></li>
+                    <li><a href="/legal#cookies">Cookie Policy</a></li>
                 </ul>
             </div>
             <div class="footer-column">
