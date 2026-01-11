@@ -25,6 +25,10 @@ $constructionMsg = $constructionMsg ?? 'We\'re working hard to bring you somethi
     text-align: center;
     margin: 3rem auto;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .construction-icon {
     color: rgba(255, 255, 255, 0.4);
@@ -34,19 +38,22 @@ $constructionMsg = $constructionMsg ?? 'We\'re working hard to bring you somethi
     font-size: 1.5rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.75rem 0;
     letter-spacing: 0.5px;
+    text-align: center;
+    width: 100%;
 }
 .under-construction p {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    width: 100%;
 }
 .construction-line {
     width: 60px;
     height: 2px;
     background: rgba(255, 255, 255, 0.15);
-    margin: 0 auto;
 }
 </style>

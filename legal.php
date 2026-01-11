@@ -132,7 +132,7 @@ include 'includes/header.php';
         <h4>Questions About Our Policies?</h4>
         <p>If you have any questions about our Terms, Privacy Policy, or Cookie Policy, please contact us:</p>
         <p><strong>Email:</strong> legal@hildrstudios.com</p>
-        <p><strong>Location:</strong> Los Angeles, CA</p>
+        <p><strong>Location:</strong> Lucena City, Philippines</p>
     </div>
 </div>
 
