@@ -21,13 +21,11 @@ renderPricingCard([
     'title' => 'Starter',
     'price' => '$499',
     'unit' => '/project',
-    'description' => 'Perfect for content creators and short-form videos',
+    'description' => 'Best suited for brands that require quick results.',
     'features' => [
-        'Up to 3 minutes final video',
-        '2 revision rounds',
-        'Basic color correction',
-        'Stock music included',
-        '5 business day delivery'
+        '20  stills',
+        '2 outputs per day',
+        '3 active requests'
     ],
     'link' => 'project-inquiry?service=video-editing&plan=starter'
 ]);
@@ -36,14 +34,12 @@ renderPricingCard([
     'title' => 'Professional',
     'price' => '$899',
     'unit' => '/project',
-    'description' => 'Ideal for brands and businesses',
+    'description' => 'Perfect mix of stills and video for your brand.',
     'features' => [
-        'Up to 10 minutes final video',
-        'Unlimited revisions',
-        'Advanced color grading',
-        'Custom sound design',
-        'Motion graphics included',
-        '3 business day delivery'
+        '25 ~ 30 content',
+        '2 ~ 3 output per day',
+        '5 active requests',
+        'Stills and short form videos'
     ],
     'link' => 'project-inquiry?service=video-editing&plan=professional',
     'featured' => true
@@ -52,14 +48,15 @@ renderPricingCard([
 renderPricingCard([
     'title' => 'Enterprise',
     'price' => 'Custom',
-    'description' => 'For large-scale productions and agencies',
+    'description' => 'For all of your production needs.',
     'features' => [
-        'Unlimited video length',
-        'Dedicated project manager',
+        'Stills',
+        'Shortform video',
+        'Longform video',
+        'Customized Graphics',
+        'Product Shoots',
         'Priority support 24/7',
-        'Full post-production suite',
-        'Source files included',
-        'Rush delivery available'
+        'Rush output available'
     ],
     'link' => 'project-inquiry?service=video-editing&plan=enterprise',
     'buttonText' => 'Contact Us'
