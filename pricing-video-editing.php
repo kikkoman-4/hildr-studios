@@ -34,7 +34,7 @@ renderPricingCard([
 
 renderPricingCard([
     'title' => 'Professional',
-    'price' => '$1,299',
+    'price' => '$899',
     'unit' => '/project',
     'description' => 'Ideal for brands and businesses',
     'features' => [
