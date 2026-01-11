@@ -15,7 +15,7 @@ include 'includes/pricing-card.php';
 
 
 
-<div class="pricing-grid" style="display: none;">
+<div class="pricing-grid">
 <?php
 renderPricingCard([
     'title' => 'Starter',
@@ -29,7 +29,7 @@ renderPricingCard([
         'Stock music included',
         '5 business day delivery'
     ],
-    'link' => 'project-inquiry.php?service=video-editing&plan=starter'
+    'link' => 'project-inquiry?service=video-editing&plan=starter'
 ]);
 
 renderPricingCard([
@@ -45,7 +45,7 @@ renderPricingCard([
         'Motion graphics included',
         '3 business day delivery'
     ],
-    'link' => 'project-inquiry.php?service=video-editing&plan=professional',
+    'link' => 'project-inquiry?service=video-editing&plan=professional',
     'featured' => true
 ]);
 
@@ -61,7 +61,7 @@ renderPricingCard([
         'Source files included',
         'Rush delivery available'
     ],
-    'link' => 'project-inquiry.php?service=video-editing&plan=enterprise',
+    'link' => 'project-inquiry?service=video-editing&plan=enterprise',
     'buttonText' => 'Contact Us'
 ]);
 ?>

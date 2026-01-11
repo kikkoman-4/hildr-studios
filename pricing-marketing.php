@@ -15,7 +15,7 @@ include 'includes/pricing-card.php';
 
 
 
-<div class="pricing-grid" style="display: none;">
+<div class="pricing-grid">
 <?php
 renderPricingCard([
     'title' => 'Starter',
@@ -29,7 +29,7 @@ renderPricingCard([
         'Content calendar',
         'Monthly strategy call'
     ],
-    'link' => 'project-inquiry.php?service=marketing&plan=starter'
+    'link' => 'project-inquiry?service=marketing&plan=starter'
 ]);
 
 renderPricingCard([
@@ -45,7 +45,7 @@ renderPricingCard([
         'Detailed analytics',
         'Bi-weekly strategy calls'
     ],
-    'link' => 'project-inquiry.php?service=marketing&plan=growth',
+    'link' => 'project-inquiry?service=marketing&plan=growth',
     'featured' => true
 ]);
 
@@ -61,7 +61,7 @@ renderPricingCard([
         'Dedicated account manager',
         '24/7 support'
     ],
-    'link' => 'project-inquiry.php?service=marketing&plan=enterprise',
+    'link' => 'project-inquiry?service=marketing&plan=enterprise',
     'buttonText' => 'Contact Us'
 ]);
 ?>

@@ -15,7 +15,7 @@ include 'includes/pricing-card.php';
 
 
 
-<div class="pricing-grid" style="display: none;">
+<div class="pricing-grid">
 <?php
 renderPricingCard([
     'title' => 'Landing Page',
@@ -29,7 +29,7 @@ renderPricingCard([
         'Basic SEO setup',
         '1 week delivery'
     ],
-    'link' => 'project-inquiry.php?service=web-development&plan=landing-page'
+    'link' => 'project-inquiry?service=web-development&plan=landing-page'
 ]);
 
 renderPricingCard([
@@ -45,7 +45,7 @@ renderPricingCard([
         'Analytics setup',
         '2-3 weeks delivery'
     ],
-    'link' => 'project-inquiry.php?service=web-development&plan=business',
+    'link' => 'project-inquiry?service=web-development&plan=business',
     'featured' => true
 ]);
 
@@ -61,7 +61,7 @@ renderPricingCard([
         'Ongoing support',
         'Dedicated team'
     ],
-    'link' => 'project-inquiry.php?service=web-development&plan=custom',
+    'link' => 'project-inquiry?service=web-development&plan=custom',
     'buttonText' => 'Contact Us'
 ]);
 ?>

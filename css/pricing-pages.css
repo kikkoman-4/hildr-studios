@@ -63,17 +63,133 @@
     border-radius: 16px;
     padding: 2.5rem;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.4s ease, border-color 0.4s ease, -webkit-box-shadow 0.4s ease;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--service-color, #a855f7), transparent, var(--service-color, #a855f7));
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--service-color, rgba(168, 85, 247, 0.5));
+    -webkit-transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--service-color, #a855f7);
+    -webkit-box-shadow: 
+        0 0 20px rgba(168, 85, 247, 0.3),
+        0 0 40px rgba(168, 85, 247, 0.2),
+        0 0 60px rgba(168, 85, 247, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 0 20px rgba(168, 85, 247, 0.3),
+        0 0 40px rgba(168, 85, 247, 0.2),
+        0 0 60px rgba(168, 85, 247, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card:hover::after {
+    opacity: 0.5;
+}
+
+/* Service-specific neon colors */
+.pricing-card[data-service="video-editing"]:hover {
+    border-color: #ff6b6b;
+    -webkit-box-shadow: 
+        0 0 20px rgba(255, 107, 107, 0.4),
+        0 0 40px rgba(255, 107, 107, 0.25),
+        0 0 60px rgba(255, 107, 107, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 0 20px rgba(255, 107, 107, 0.4),
+        0 0 40px rgba(255, 107, 107, 0.25),
+        0 0 60px rgba(255, 107, 107, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card[data-service="photo-editing"]:hover {
+    border-color: #4ecdc4;
+    -webkit-box-shadow: 
+        0 0 20px rgba(78, 205, 196, 0.4),
+        0 0 40px rgba(78, 205, 196, 0.25),
+        0 0 60px rgba(78, 205, 196, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 0 20px rgba(78, 205, 196, 0.4),
+        0 0 40px rgba(78, 205, 196, 0.25),
+        0 0 60px rgba(78, 205, 196, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card[data-service="web-development"]:hover {
+    border-color: #3b82f6;
+    -webkit-box-shadow: 
+        0 0 20px rgba(59, 130, 246, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.25),
+        0 0 60px rgba(59, 130, 246, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 0 20px rgba(59, 130, 246, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.25),
+        0 0 60px rgba(59, 130, 246, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card[data-service="marketing"]:hover {
+    border-color: #10b981;
+    -webkit-box-shadow: 
+        0 0 20px rgba(16, 185, 129, 0.4),
+        0 0 40px rgba(16, 185, 129, 0.25),
+        0 0 60px rgba(16, 185, 129, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 0 20px rgba(16, 185, 129, 0.4),
+        0 0 40px rgba(16, 185, 129, 0.25),
+        0 0 60px rgba(16, 185, 129, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .pricing-card.featured {
     border-color: var(--service-color, #a855f7);
     position: relative;
+    -webkit-box-shadow: 
+        0 0 15px rgba(168, 85, 247, 0.2),
+        0 0 30px rgba(168, 85, 247, 0.1);
+    box-shadow: 
+        0 0 15px rgba(168, 85, 247, 0.2),
+        0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+.pricing-card.featured[data-service="video-editing"] {
+    border-color: #ff6b6b;
+    -webkit-box-shadow: 0 0 15px rgba(255, 107, 107, 0.25), 0 0 30px rgba(255, 107, 107, 0.1);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.25), 0 0 30px rgba(255, 107, 107, 0.1);
+}
+
+.pricing-card.featured[data-service="photo-editing"] {
+    border-color: #4ecdc4;
+    -webkit-box-shadow: 0 0 15px rgba(78, 205, 196, 0.25), 0 0 30px rgba(78, 205, 196, 0.1);
+    box-shadow: 0 0 15px rgba(78, 205, 196, 0.25), 0 0 30px rgba(78, 205, 196, 0.1);
+}
+
+.pricing-card.featured[data-service="web-development"] {
+    border-color: #3b82f6;
+    -webkit-box-shadow: 0 0 15px rgba(59, 130, 246, 0.25), 0 0 30px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.25), 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.pricing-card.featured[data-service="marketing"] {
+    border-color: #10b981;
+    -webkit-box-shadow: 0 0 15px rgba(16, 185, 129, 0.25), 0 0 30px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25), 0 0 30px rgba(16, 185, 129, 0.1);
 }
 
 .pricing-card.featured::before {
@@ -81,6 +197,7 @@
     position: absolute;
     top: -12px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
     color: white;
@@ -89,6 +206,8 @@
     padding: 4px 16px;
     border-radius: 20px;
     letter-spacing: 1px;
+    -webkit-box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
 .pricing-card h3 {

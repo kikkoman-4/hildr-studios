@@ -15,7 +15,7 @@ include 'includes/pricing-card.php';
 
 
 
-<div class="pricing-grid" style="display: none;">
+<div class="pricing-grid">
 <?php
 renderPricingCard([
     'title' => 'Basic',
@@ -29,7 +29,7 @@ renderPricingCard([
         'Cropping & straightening',
         '48-hour delivery'
     ],
-    'link' => 'project-inquiry.php?service=photo-editing&plan=basic'
+    'link' => 'project-inquiry?service=photo-editing&plan=basic'
 ]);
 
 renderPricingCard([
@@ -45,7 +45,7 @@ renderPricingCard([
         '2 revision rounds',
         '24-hour delivery'
     ],
-    'link' => 'project-inquiry.php?service=photo-editing&plan=professional',
+    'link' => 'project-inquiry?service=photo-editing&plan=professional',
     'featured' => true
 ]);
 
@@ -62,7 +62,7 @@ renderPricingCard([
         'Source files (PSD)',
         'Priority delivery'
     ],
-    'link' => 'project-inquiry.php?service=photo-editing&plan=premium'
+    'link' => 'project-inquiry?service=photo-editing&plan=premium'
 ]);
 ?>
 </div>
