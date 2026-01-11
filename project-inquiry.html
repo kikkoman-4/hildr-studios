@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Inquiry - HildrStudios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pricing-pages.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <section class="inquiry-hero">
+        <h1>Start Your Project</h1>
+        <p>Tell us about your vision and we'll bring it to life</p>
+    </section>
+
+    <div class="inquiry-container">
+        <form class="inquiry-form" id="inquiryForm">
+            <div class="selected-info" id="selectedInfo" style="display: none;">
+                <p>Selected Service: <strong id="selectedService">-</strong></p>
+                <p>Selected Plan: <strong id="selectedPlan">-</strong></p>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="John">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company / Brand Name</label>
+                <input type="text" id="company" name="company" placeholder="Your Company">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="service">Service Type *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="video-editing">Video Editing</option>
+                        <option value="photo-editing">Photo Editing</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="marketing">Marketing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Estimated Budget</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select budget range</option>
+                        <option value="under-500">Under $500</option>
+                        <option value="500-1000">$500 - $1,000</option>
+                        <option value="1000-3000">$1,000 - $3,000</option>
+                        <option value="3000-5000">$3,000 - $5,000</option>
+                        <option value="5000-10000">$5,000 - $10,000</option>
+                        <option value="over-10000">Over $10,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Project Timeline</label>
+                <select id="timeline" name="timeline">
+                    <option value="">Select timeline</option>
+                    <option value="asap">ASAP / Rush</option>
+                    <option value="1-week">Within 1 week</option>
+                    <option value="2-weeks">Within 2 weeks</option>
+                    <option value="1-month">Within 1 month</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="projectDetails">Project Details *</label>
+                <textarea id="projectDetails" name="projectDetails" required 
+                    placeholder="Please describe your project in detail. Include information about:
+• What you're looking to create
+• Your target audience
+• Any specific requirements or preferences
+• Reference examples (if any)
+• Deliverable formats needed"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="referenceLinks">Reference Links (optional)</label>
+                <textarea id="referenceLinks" name="referenceLinks" style="min-height: 80px;"
+                    placeholder="Share any links to examples, inspiration, or existing content"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Submit Inquiry</button>
+            
+            <div class="form-message" id="formMessage"></div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="Assets/logo-title.png" alt="HildrStudios">
+                <p>Precision in Every Cut.<br>Victory in Every Frame.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing-video-editing.html">Video Editing</a></li>
+                        <li><a href="pricing-photo-editing.html">Photo Editing</a></li>
+                        <li><a href="pricing-web-development.html">Web Development</a></li>
+                        <li><a href="pricing-marketing.html">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2026 HildrStudios. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS - Replace with your actual public key
+        // Sign up at https://www.emailjs.com/ to get your credentials
+        (function() {
+            emailjs.init({
+                publicKey: "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+            });
+        })();
+
+        // Service labels for email subject
+        const serviceLabels = {
+            'video-editing': '[VIDEO EDITING]',
+            'photo-editing': '[PHOTO EDITING]',
+            'web-development': '[WEB DEVELOPMENT]',
+            'marketing': '[MARKETING]'
+        };
+
+        const serviceNames = {
+            'video-editing': 'Video Editing',
+            'photo-editing': 'Photo Editing',
+            'web-development': 'Web Development',
+            'marketing': 'Marketing'
+        };
+
+        // Parse URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                service: params.get('service'),
+                plan: params.get('plan')
+            };
+        }
+
+        // Pre-fill form based on URL parameters
+        function prefillForm() {
+            const { service, plan } = getUrlParams();
+            
+            if (service) {
+                const serviceSelect = document.getElementById('service');
+                serviceSelect.value = service;
+                
+                const selectedInfo = document.getElementById('selectedInfo');
+                const selectedService = document.getElementById('selectedService');
+                const selectedPlan = document.getElementById('selectedPlan');
+                
+                selectedService.textContent = serviceNames[service] || service;
+                selectedPlan.textContent = plan ? plan.charAt(0).toUpperCase() + plan.slice(1).replace('-', ' ') : 'Not specified';
+                selectedInfo.style.display = 'block';
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.className = 'form-message';
+            formMessage.style.display = 'none';
+
+            // Gather form data
+            const service = document.getElementById('service').value;
+            const { plan } = getUrlParams();
+            
+            const templateParams = {
+                // Email subject will include service label
+                subject_label: serviceLabels[service] || '[INQUIRY]',
+                service_type: serviceNames[service] || service,
+                selected_plan: plan || 'Not specified',
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || 'Not provided',
+                company: document.getElementById('company').value || 'Not provided',
+                budget: document.getElementById('budget').value || 'Not specified',
+                timeline: document.getElementById('timeline').value || 'Not specified',
+                project_details: document.getElementById('projectDetails').value,
+                reference_links: document.getElementById('referenceLinks').value || 'None provided'
+            };
+
+            try {
+                // Send email using EmailJS
+                // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS credentials
+                await emailjs.send(
+                    'YOUR_SERVICE_ID',  // Replace with your EmailJS service ID
+                    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+                    templateParams
+                );
+
+                // Success
+                formMessage.className = 'form-message success';
+                formMessage.textContent = 'Thank you! Your inquiry has been submitted successfully. We\'ll get back to you within 24-48 hours.';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                prefillForm(); // Re-apply URL params if any
+                
+            } catch (error) {
+                // Error
+                console.error('EmailJS Error:', error);
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Oops! Something went wrong. Please try again or contact us directly at contact@hildrstudios.com';
+                formMessage.style.display = 'block';
+            }
+
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Inquiry';
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', prefillForm);
+    </script>
+</body>
+</html>

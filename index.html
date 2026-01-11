@@ -3,64 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HildrStudios - Precision in Every Cut</title>
+    <title>HildrStudios</title>
+    <link rel="preload" href="Assets/HildrAppleStyleAd-1080p-wMusic.webm" as="video" type="video/webm">
+    <link rel="preload" href="Assets/hero-bg.png" as="image">
+    <link rel="preload" href="Assets/logo-title.png" as="image">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .preloader-logo {
+            width: 150px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .preloader-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .preloader-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #a855f7, #3b82f6);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        .preloader-text {
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            font-family: system-ui, -apple-system, sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        body.loading {
+            overflow: hidden;
+        }
+    </style>
 </head>
-<body>
-    <section class="hero">
-        <!-- Film strip marquees -->
-        <div class="film-strip film-top"></div>
-        <div class="film-strip film-bottom"></div>
-        <div class="film-strip film-left"></div>
-        <div class="film-strip film-right"></div>
-
-        <header class="fade-in fade-in-1">
-            <img src="assets/logo-title.png" alt="HildrStudios">
-        </header>
-
-        <div class="content">
-            <div class="headlines">
-                <h1 class="fade-in fade-in-2">PRECISION<br>IN EVERY CUT</h1>
-                <h2 class="fade-in fade-in-2">VICTORY<br>IN EVERY FRAME</h2>
-            </div>
-
-            <div class="bottom fade-in fade-in-3">
-                <hr>
-                <div class="row">
-                    <p>Editing That Elevates Your Brand.<br>Editing That Elevates Creators.</p>
-                    <button class="fade-in fade-in-4">GET STARTED</button>
-                </div>
-                <hr>
-            </div>
+<body class="loading">
+    <div class="preloader" id="preloader">
+        <img src="Assets/logo-title.png" alt="HildrStudios" class="preloader-logo">
+        <div class="preloader-bar">
+            <div class="preloader-progress" id="preloaderProgress"></div>
         </div>
+        <p class="preloader-text">Loading</p>
+    </div>
+
+    <section class="hero">
+        <div id="hero-carousel" class="splide hero-carousel">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="hero-slide hero-slide--video">
+                            <video class="hero-media-bg" autoplay muted loop playsinline>
+                                <source src="Assets/HildrAppleStyleAd-1080p-wMusic.webm" type="video/webm">
+                            </video>
+                            <video class="hero-media hero-media-main" autoplay muted loop playsinline>
+                                <source src="Assets/HildrAppleStyleAd-1080p-wMusic.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide hero-slide--image">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 1">
+                            <div class="hero-overlay"></div>
+                            <div class="film-tape-marquee film-tape-top">
+                                <div class="film-tape-track">
+                                    <div class="film-tape">
+                                        <span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span>
+                                    </div>
+                                    <div class="film-tape">
+                                        <span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-tape-marquee film-tape-bottom">
+                                <div class="film-tape-track film-tape-track--reverse">
+                                    <div class="film-tape">
+                                        <span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span>
+                                    </div>
+                                    <div class="film-tape">
+                                        <span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span><span class="film-perf"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-slide-content">
+                                <h1>VICTORY<br>IN EVERY FRAME</h1>
+                                <p>Professional Video Editing Services</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide hero-slide--image hero-slide--polaroids">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 2">
+                            <div class="hero-overlay"></div>
+                            <div class="polaroid-container">
+                                <div class="polaroid polaroid-1" data-tilt>
+                                    <div class="polaroid-inner">
+                                        <div class="polaroid-image"></div>
+                                        <div class="polaroid-caption"></div>
+                                    </div>
+                                </div>
+                                <div class="polaroid polaroid-2" data-tilt>
+                                    <div class="polaroid-inner">
+                                        <div class="polaroid-image"></div>
+                                        <div class="polaroid-caption"></div>
+                                    </div>
+                                </div>
+                                <div class="polaroid polaroid-3" data-tilt>
+                                    <div class="polaroid-inner">
+                                        <div class="polaroid-image"></div>
+                                        <div class="polaroid-caption"></div>
+                                    </div>
+                                </div>
+                                <div class="polaroid polaroid-4" data-tilt>
+                                    <div class="polaroid-inner">
+                                        <div class="polaroid-image"></div>
+                                        <div class="polaroid-caption"></div>
+                                    </div>
+                                </div>
+                                <div class="polaroid polaroid-5" data-tilt>
+                                    <div class="polaroid-inner">
+                                        <div class="polaroid-image"></div>
+                                        <div class="polaroid-caption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-slide-content">
+                                <h1>CREATIVE<br>EXCELLENCE</h1>
+                                <p>Bringing Your Vision to Life</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide hero-slide--image">
+                            <img class="hero-media" src="Assets/hero-bg.png" alt="Product Showcase 3">
+                            <div class="hero-overlay"></div>
+                            <div class="hero-slide-content">
+                                <h1>ELEVATE<br>YOUR BRAND</h1>
+                                <p>Stand Out From The Crowd</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="hero-pagination"></div>
+        </div>
+        <header class="hero-header fade-in fade-in-1">
+            <img src="Assets/logo-title.png" alt="HildrStudios">
+        </header>
     </section>
 
-    <section class="collaborators">
+    <a href="#collaborators" class="hero-get-started" id="heroGetStarted">
+        <span>Get Started</span>
+    </a>
+
+    <section id="collaborators" class="collaborators">
         <p class="collab-title">COLLABORATED WITH</p>
-        <div class="marquee">
-            <div class="marquee-track">
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"></span>
-                <span><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"></span>
-                <span><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple"></span>
-                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon"></span>
+        <div id="collab-splide" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide" data-brand="slack"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"></li>
+                    <li class="splide__slide" data-brand="nike"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike"></li>
+                    <li class="splide__slide" data-brand="google"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google"></li>
+                    <li class="splide__slide" data-brand="apple"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple"></li>
+                    <li class="splide__slide" data-brand="aws"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon"></li>
+                </ul>
             </div>
         </div>
     </section>
 
     <nav class="header">
-        <ul class="navbar-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">About us</a></li>
-        </ul>
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">
+                <img src="Assets/HildrStudios_Logo_W.png" alt="HildrStudios">
+            </a>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services" class="smooth-scroll">Services</a></li>
+                <li><a href="#portfolio" class="smooth-scroll">Projects</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </div>
+        <div class="navbar-overlay" id="navbarOverlay"></div>
     </nav>
 
     <section class="info">
@@ -70,121 +221,182 @@
                 <h2>HildrStudios</h2>
             </div>
             <div class="info-description">
-                <p>
-                    <strong>HildrStudios</strong> is a creative editing studio that works with creators and brands to craft high-impact, visually compelling content. We specialize in video editing and post-production that elevates storytelling and strengthens digital presence. By combining clean aesthetics with strategic intent, we help our partners stand out and connect with their audience across platforms.
-                </p>
+                <p><strong>HildrStudios</strong> is a creative editing studio that works with creators and brands to craft high-impact, visually compelling content. We specialize in video editing and post-production that elevates storytelling and strengthens digital presence. By combining clean aesthetics with strategic intent, we help our partners stand out and connect with their audience across platforms.</p>
             </div>
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services"></section>
         <h3 class="services-title">Our Services</h3>
-        <div class="services-carousel">
-            <div class="services-track">
-                <div class="service-card" style="--card-color: #ff6b6b;">
-                    <div class="card-content">
-                        <h4>Video Editing</h4>
-                        <p>Professional post-production</p>
+        <div id="services-splide" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <a href="pricing-video-editing.html" class="service-card-link">
+                            <div class="service-card" style="--card-color: #ff6b6b;">
+                                <div class="card-content">
+                                    <h4>Video Editing</h4>
+                                    <p>Professional post-production</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="pricing-photo-editing.html" class="service-card-link">
+                            <div class="service-card" style="--card-color: #4ecdc4;">
+                                <div class="card-content">
+                                    <h4>Photo Editing</h4>
+                                    <p>Stunning visual enhancement</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li class="splide__slide">
+                        <div class="service-card" style="--card-color: #a855f7;">
+                            <div class="card-content">
+                                <h4>Game Development</h4>
+                                <p>Immersive gaming experiences</p>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="splide__slide">
+                        <a href="pricing-web-development.html" class="service-card-link">
+                            <div class="service-card" style="--card-color: #3b82f6;">
+                                <div class="card-content">
+                                    <h4>Web Development</h4>
+                                    <p>Modern web solutions</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li class="splide__slide">
+                        <div class="service-card" style="--card-color: #f59e0b;">
+                            <div class="card-content">
+                                <h4>Electronics</h4>
+                                <p>Hardware innovation</p>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="splide__slide">
+                        <a href="pricing-marketing.html" class="service-card-link">
+                            <div class="service-card" style="--card-color: #10b981;">
+                                <div class="card-content">
+                                    <h4>Marketing</h4>
+                                    <p>Strategic brand growth</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h3 class="portfolio-title">Our Work</h3>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-project="1">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">▶</span>
                     </div>
                 </div>
-                <div class="service-card" style="--card-color: #4ecdc4;">
-                    <div class="card-content">
-                        <h4>Photo Editing</h4>
-                        <p>Stunning visual enhancement</p>
+            </div>
+            <div class="portfolio-item" data-project="2">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">◻</span>
                     </div>
                 </div>
-                <div class="service-card" style="--card-color: #a855f7;">
-                    <div class="card-content">
-                        <h4>Game Development</h4>
-                        <p>Immersive gaming experiences</p>
+            </div>
+            <div class="portfolio-item" data-project="3">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">▶</span>
                     </div>
                 </div>
-                <div class="service-card" style="--card-color: #3b82f6;">
-                    <div class="card-content">
-                        <h4>Web Development</h4>
-                        <p>Modern web solutions</p>
+            </div>
+            <div class="portfolio-item" data-project="4">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">◻</span>
                     </div>
                 </div>
-                <div class="service-card" style="--card-color: #f59e0b;">
-                    <div class="card-content">
-                        <h4>Electronics</h4>
-                        <p>Hardware innovation</p>
+            </div>
+            <div class="portfolio-item" data-project="5">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">▶</span>
                     </div>
                 </div>
-                <div class="service-card" style="--card-color: #10b981;">
-                    <div class="card-content">
-                        <h4>Marketing</h4>
-                        <p>Strategic brand growth</p>
-                    </div>
-                </div>
-                <!-- Duplicated for seamless loop -->
-                <div class="service-card" style="--card-color: #ff6b6b;">
-                    <div class="card-content">
-                        <h4>Video Editing</h4>
-                        <p>Professional post-production</p>
-                    </div>
-                </div>
-                <div class="service-card" style="--card-color: #4ecdc4;">
-                    <div class="card-content">
-                        <h4>Photo Editing</h4>
-                        <p>Stunning visual enhancement</p>
-                    </div>
-                </div>
-                <div class="service-card" style="--card-color: #a855f7;">
-                    <div class="card-content">
-                        <h4>Game Development</h4>
-                        <p>Immersive gaming experiences</p>
-                    </div>
-                </div>
-                <div class="service-card" style="--card-color: #3b82f6;">
-                    <div class="card-content">
-                        <h4>Web Development</h4>
-                        <p>Modern web solutions</p>
-                    </div>
-                </div>
-                <div class="service-card" style="--card-color: #f59e0b;">
-                    <div class="card-content">
-                        <h4>Electronics</h4>
-                        <p>Hardware innovation</p>
-                    </div>
-                </div>
-                <div class="service-card" style="--card-color: #10b981;">
-                    <div class="card-content">
-                        <h4>Marketing</h4>
-                        <p>Strategic brand growth</p>
+            </div>
+            <div class="portfolio-item" data-project="6">
+                <div class="portfolio-thumb">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-icon">◻</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="post-modal" id="postModal">
+        <div class="post-modal-content">
+            <button class="post-close" id="postClose">&times;</button>
+            <div class="post-media">
+                <div class="post-image"></div>
+            </div>
+            <div class="post-details">
+                <div class="post-header">
+                    <div class="post-avatar"></div>
+                    <div class="post-user">
+                        <span class="post-username">hildr.studios</span>
+                        <span class="post-location">Los Angeles, CA</span>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <h4 class="post-title">Project Title</h4>
+                    <p class="post-description">Project description goes here. This is where we showcase the creative process and final results.</p>
+                    <div class="post-credits">
+                        <span class="credits-label">Created by</span>
+                        <div class="credits-team">
+                            <span class="credit-member">Alex Chen</span>
+                            <span class="credit-role">Lead Editor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-actions">
+                    <div class="post-stats">
+                        <span class="post-date">January 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="assets/logo-title.png" alt="HildrStudios">
+                <img src="Assets/logo-title.png" alt="HildrStudios">
                 <p>Precision in Every Cut.<br>Victory in Every Frame.</p>
             </div>
-            
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#services" class="smooth-scroll">Services</a></li>
+                        <li><a href="#portfolio" class="smooth-scroll">Projects</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="legal.html#terms">Terms & Conditions</a></li>
+                        <li><a href="legal.html#privacy">Privacy Policy</a></li>
+                        <li><a href="legal.html#cookies">Cookie Policy</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <ul>
@@ -196,7 +408,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <hr>
             <p>&copy; 2026 HildrStudios. All rights reserved.</p>
@@ -204,86 +415,204 @@
     </footer>
 
     <script src="js/sticky-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
     <script>
         (function() {
-            const carousel = document.querySelector('.services-carousel');
-            const track = document.querySelector('.services-track');
-            if (!carousel || !track) return;
+            var preloader = document.getElementById('preloader');
+            var progressBar = document.getElementById('preloaderProgress');
+            var assets = {
+                images: ['Assets/hero-bg.png', 'Assets/logo-title.png', 'Assets/HildrStudios_Logo_W.png'],
+                videos: ['Assets/HildrAppleStyleAd-1080p-wMusic.webm'],
+                external: [
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
+                    'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg',
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
+                ]
+            };
+            var total = assets.images.length + assets.videos.length + assets.external.length;
+            var loaded = 0;
+            var finished = false;
 
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-            let isPaused = false;
-
-            // Auto scroll - moves 1 card width every 2 seconds
-            const cardWidth = 280 + 24; // card width + gap
-            
-            function autoScroll() {
-                if (!isPaused) {
-                    carousel.scrollLeft += 1;
-                    
-                    // Seamless loop
-                    const halfWidth = track.scrollWidth / 2;
-                    if (carousel.scrollLeft >= halfWidth) {
-                        carousel.scrollLeft = 0;
-                    }
-                }
-                requestAnimationFrame(autoScroll);
+            function update() {
+                loaded++;
+                progressBar.style.width = Math.round((loaded / total) * 100) + '%';
+                if (loaded >= total) setTimeout(finish, 300);
             }
-            
-            autoScroll();
 
-            // Mouse drag - only pause while actively dragging
-            carousel.addEventListener('mousedown', (e) => {
-                isDown = true;
-                isPaused = true;
-                carousel.style.cursor = 'grabbing';
-                startX = e.pageX - carousel.offsetLeft;
-                scrollLeft = carousel.scrollLeft;
-            });
+            function finish() {
+                if (finished) return;
+                finished = true;
+                preloader.classList.add('loaded');
+                document.body.classList.remove('loading');
+                initCarousels();
+            }
 
-            document.addEventListener('mouseup', () => {
-                if (isDown) {
-                    isDown = false;
-                    carousel.style.cursor = 'grab';
-                    // Resume after 2 seconds
-                    setTimeout(() => { isPaused = false; }, 2000);
+            function loadImg(src) {
+                var img = new Image();
+                img.onload = img.onerror = update;
+                img.src = src;
+            }
+
+            function loadVideo(src) {
+                var video = document.createElement('video');
+                video.preload = 'auto';
+                video.oncanplaythrough = video.onerror = update;
+                setTimeout(update, 8000);
+                video.src = src;
+                video.load();
+            }
+
+            assets.images.forEach(loadImg);
+            assets.external.forEach(loadImg);
+            assets.videos.forEach(loadVideo);
+            setTimeout(finish, 15000);
+        })();
+
+        function initCarousels() {
+            new Splide('#collab-splide', {
+                type: 'loop',
+                drag: 'free',
+                perPage: 5,
+                gap: '2.5rem',
+                pagination: false,
+                arrows: false,
+                autoScroll: { speed: 0.2, pauseOnHover: true, pauseOnFocus: false },
+                breakpoints: {
+                    768: { perPage: 4, gap: '1.25rem' },
+                    480: { perPage: 3, gap: '0.75rem' }
                 }
+            }).mount(window.splide.Extensions);
+
+            new Splide('#services-splide', {
+                type: 'loop',
+                drag: 'free',
+                focus: 'center',
+                perPage: 5,
+                gap: '16px',
+                pagination: false,
+                arrows: false,
+                autoScroll: { speed: 0.2, pauseOnHover: false, pauseOnFocus: true },
+                breakpoints: {
+                    1400: { perPage: 4, gap: '14px' },
+                    1024: { perPage: 3, gap: '12px' },
+                    768: { perPage: 2, gap: '10px' },
+                    480: { perPage: 2, gap: '8px' }
+                }
+            }).mount(window.splide.Extensions);
+
+            var hero = new Splide('#hero-carousel', {
+                type: 'loop',
+                direction: 'ttb',
+                height: '100vh',
+                perPage: 1,
+                perMove: 1,
+                autoplay: true,
+                interval: 6000,
+                speed: 1000,
+                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                pagination: true,
+                arrows: false,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                wheel: true,
+                wheelSleep: 500,
+                drag: true
             });
 
-            carousel.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - carousel.offsetLeft;
-                const walk = (x - startX) * 2;
-                carousel.scrollLeft = scrollLeft - walk;
-            });
-
-            // Touch handlers
-            carousel.addEventListener('touchstart', (e) => {
-                isPaused = true;
-                startX = e.touches[0].pageX - carousel.offsetLeft;
-                scrollLeft = carousel.scrollLeft;
-            });
-
-            carousel.addEventListener('touchend', () => {
-                setTimeout(() => { isPaused = false; }, 2000);
-            });
-
-            carousel.addEventListener('touchmove', (e) => {
-                const x = e.touches[0].pageX - carousel.offsetLeft;
-                const walk = (x - startX) * 2;
-                carousel.scrollLeft = scrollLeft - walk;
-            });
-
-            // Card click - pause temporarily
-            document.querySelectorAll('.service-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    isPaused = true;
-                    setTimeout(() => { isPaused = false; }, 3000);
+            hero.on('pagination:mounted', function(data) {
+                data.list.classList.add('hero-pagination-list');
+                data.items.forEach(function(item) {
+                    item.button.classList.add('hero-pagination-dot');
                 });
             });
-        })();
+
+            hero.on('active', function(slide) {
+                slide.slide.querySelectorAll('video').forEach(function(v) {
+                    v.currentTime = 0;
+                    v.play();
+                });
+            });
+
+            hero.on('inactive', function(slide) {
+                slide.slide.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            });
+
+            hero.mount();
+
+            // Get Started Button visibility
+            var btn = document.getElementById('heroGetStarted');
+            var heroSection = document.querySelector('.hero');
+            
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            btn.classList.remove('hidden');
+                        } else {
+                            btn.classList.add('hidden');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(heroSection);
+            } else {
+                btn.classList.remove('hidden');
+            }
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('.smooth-scroll').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var targetId = this.getAttribute('href');
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Portfolio Modal
+            var modal = document.getElementById('postModal');
+            var closeBtn = document.getElementById('postClose');
+            var portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            var projects = [
+                { title: 'Nike Campaign 2025', desc: 'A dynamic brand campaign showcasing athletic excellence through cinematic storytelling.', creator: 'Alex Chen', role: 'Lead Editor', date: 'December 2025' },
+                { title: 'Apple Product Launch', desc: 'Sleek product reveal video with minimalist aesthetics and precise timing.', creator: 'Sarah Kim', role: 'Motion Designer', date: 'November 2025' },
+                { title: 'Spotify Wrapped', desc: 'Vibrant year-end recap with bold colors and energetic transitions.', creator: 'Marcus Johnson', role: 'Colorist', date: 'October 2025' },
+                { title: 'Google I/O Visuals', desc: 'Tech conference visuals featuring clean animations and modern design.', creator: 'Emma Davis', role: 'Sound Designer', date: 'September 2025' },
+                { title: 'Netflix Series Trailer', desc: 'Gripping trailer edit with dramatic pacing and atmospheric sound design.', creator: 'Alex Chen', role: 'Lead Editor', date: 'August 2025' },
+                { title: 'Brand Documentary', desc: 'Behind-the-scenes documentary capturing authentic brand stories.', creator: 'Sarah Kim', role: 'Motion Designer', date: 'July 2025' }
+            ];
+
+            portfolioItems.forEach(function(item, index) {
+                item.addEventListener('click', function() {
+                    var project = projects[index];
+                    modal.querySelector('.post-title').textContent = project.title;
+                    modal.querySelector('.post-description').textContent = project.desc;
+                    modal.querySelector('.credit-member').textContent = project.creator;
+                    modal.querySelector('.credit-role').textContent = project.role;
+                    modal.querySelector('.post-date').textContent = project.date;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     </script>
 </body>
 </html>
